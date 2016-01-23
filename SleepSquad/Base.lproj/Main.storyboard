@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c7e-tb-bTx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c7e-tb-bTx">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--First View Controller-->
@@ -17,65 +17,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="10 hrs 50 mins" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="182" y="279" width="237" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92x-kd-8CW">
-                                <rect key="frame" x="252" y="329" width="96" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dVE-RH-b2i"/>
-                                </constraints>
+                                <rect key="frame" x="252" y="393" width="96" height="30"/>
                                 <state key="normal" title="Change That?"/>
                                 <connections>
                                     <action selector="changeTimeLeft:" destination="9pv-A4-QxB" eventType="touchUpInside" id="98I-Wb-LW0"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6T8-Wz-fyL" customClass="CircleProgressView" customModule="SleepSquad" customModuleProvider="target">
+                                <rect key="frame" x="208" y="129" width="184" height="185"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trackBackgroundColor">
+                                        <color key="value" red="0.20194992550822041" green="0.43099084228261619" blue="0.64413667929292928" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="10 hrs 50 mins" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                <rect key="frame" x="182" y="343" width="237" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="92x-kd-8CW" secondAttribute="bottom" constant="241" id="ClU-0w-fAw"/>
-                            <constraint firstItem="92x-kd-8CW" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="Fq5-VH-noX"/>
-                            <constraint firstItem="92x-kd-8CW" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="aZA-6F-yXA"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="6T8-Wz-fyL" secondAttribute="bottom" constant="29" id="3zg-MF-eRF"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="92x-kd-8CW" secondAttribute="bottom" constant="177" id="Ba7-8t-3Xn"/>
+                            <constraint firstItem="92x-kd-8CW" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="Cfa-0L-YmV"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="6T8-Wz-fyL" secondAttribute="centerX" id="Kev-8X-bD2"/>
+                            <constraint firstItem="92x-kd-8CW" firstAttribute="centerX" secondItem="6T8-Wz-fyL" secondAttribute="centerX" id="m27-gH-pGD"/>
+                            <constraint firstItem="92x-kd-8CW" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="oso-IR-v51"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NNQ-hJ-NDA">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="rXw-90-lGi">
-                            <connections>
-                                <segue destination="LgX-6n-f9b" kind="show" id="XuA-s9-ftt"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="rXw-90-lGi"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="progressView" destination="6T8-Wz-fyL" id="Kry-ml-hfS"/>
                         <outlet property="timeLeft" destination="KQZ-1w-vlD" id="iQt-Ld-HR7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="-320"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="360-7b-cIu">
-            <objects>
-                <viewController id="LgX-6n-f9b" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="La5-lG-ijn"/>
-                        <viewControllerLayoutGuide type="bottom" id="dH2-Kx-dtb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TKB-i9-q2f">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SDy-9q-OcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2282" y="-343"/>
         </scene>
         <!--First-->
         <scene sceneID="FHU-mx-BuW">

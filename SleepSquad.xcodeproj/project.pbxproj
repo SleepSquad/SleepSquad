@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A7797081C5438930072F882 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7797071C5438930072F882 /* CircleProgressView.swift */; };
 		C23610731C540C7B00F2A280 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23610721C540C7B00F2A280 /* AppDelegate.swift */; };
 		C23610751C540C7B00F2A280 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23610741C540C7B00F2A280 /* FirstViewController.swift */; };
 		C236107A1C540C7B00F2A280 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23610781C540C7B00F2A280 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A7797071C5438930072F882 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		C236106F1C540C7B00F2A280 /* SleepSquad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepSquad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23610721C540C7B00F2A280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C23610741C540C7B00F2A280 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		C23610711C540C7B00F2A280 /* SleepSquad */ = {
 			isa = PBXGroup;
 			children = (
+				0A7797071C5438930072F882 /* CircleProgressView.swift */,
 				C23610721C540C7B00F2A280 /* AppDelegate.swift */,
 				C23610741C540C7B00F2A280 /* FirstViewController.swift */,
 				C23610781C540C7B00F2A280 /* Main.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				C23610731C540C7B00F2A280 /* AppDelegate.swift in Sources */,
 				C23610751C540C7B00F2A280 /* FirstViewController.swift in Sources */,
+				0A7797081C5438930072F882 /* CircleProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,10 +401,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SleepSquad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SleepSquad.SleepSquad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -408,10 +416,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SleepSquad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SleepSquad.SleepSquad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -482,6 +493,7 @@
 				C236109B1C540C7B00F2A280 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C236109C1C540C7B00F2A280 /* Build configuration list for PBXNativeTarget "SleepSquadTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +502,7 @@
 				C236109E1C540C7B00F2A280 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C236109F1C540C7B00F2A280 /* Build configuration list for PBXNativeTarget "SleepSquadUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +511,7 @@
 				C23610A11C540C7B00F2A280 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

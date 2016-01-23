@@ -10,6 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
+    @IBOutlet weak var progressView: CircleProgressView!
     @IBOutlet weak var timeLeft: UILabel!
     
     @IBAction func changeTimeLeft(sender: AnyObject) {
@@ -19,6 +20,8 @@ class FirstViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.progressView.progress = 0.32
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
