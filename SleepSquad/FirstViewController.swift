@@ -9,7 +9,14 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-
+    
+    @IBOutlet weak var timeLeft: UILabel!
+    
+    @IBAction func changeTimeLeft(sender: AnyObject) {
+        
+        timeLeft.text = "fsafdsbkdsgdgf"
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
