@@ -11,16 +11,15 @@ import UIKit
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var progressView: CircleProgressView!
-    @IBOutlet weak var timeLeft: UILabel!
+    @IBOutlet var hoursLabel: UILabel!
+    @IBOutlet var minutesLabel: UILabel!
+    @IBOutlet var timePicker: UIDatePicker!
     
-    @IBAction func changeTimeLeft(sender: AnyObject) {
-        
-        timeLeft.text = "fsafdsbkdsgdgf"
-        
-    }
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.progressView.progress = 0.32
+        super.viewDidLoad();
+        timePicker.datePickerMode = UIDatePickerMode.Time;
+        setTimeUntil();
+        self.view.backgroundColor = UIColor(red: 0.153, green: 0.192, blue: 0.247, alpha: 1.0);
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -28,6 +27,13 @@ class FirstViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setTimeUntil() {
+        self.hoursLabel.text = String(04);
+        self.minutesLabel.text = String(31);
+        self.progressView.progress = 0.32
+
     }
 
 
