@@ -23,6 +23,7 @@ class FirstViewController: UIViewController {
     var hour = -1
     var minutes = -1
     var dayOfWeek = -1 //dayOfWeek is values 0-6.
+    var timer = NSTimer()
     
     var dict = NSDictionary()
     
@@ -34,7 +35,6 @@ class FirstViewController: UIViewController {
 //        4: ["hours": 7, "minutes": 04],
 //        5: ["hours": 7, "minutes": 04],
 //        6: ["hours": 7, "minutes": 04]]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -58,7 +58,7 @@ class FirstViewController: UIViewController {
         let minsUntilWakeUp = totalMinutesUntilWakeUp % 60
         
         //run every .5 seconds
-        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "updateProgressView", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "updateProgressView", userInfo: nil, repeats: true)
         
         
     }
@@ -71,6 +71,7 @@ class FirstViewController: UIViewController {
         let hoursToWakeup = Int(minutesToWakeup!/60)
         let minutesInHour = Int(Int(minutesToWakeup!) - Int(60 * hoursToWakeup))
         var progress = 1 - Double(minutesToWakeup!)/1440.0
+        print("progress")
         print(progress)
         if progress > 1 {
             progress = 1;
@@ -200,7 +201,11 @@ class FirstViewController: UIViewController {
         super.viewWillAppear(animated)
         updateProgressView()
     }
+    
+    override func viewWillDisappear(animated: Bool) {
 
+        timer.invalidate()
+    }
 
 }
 
