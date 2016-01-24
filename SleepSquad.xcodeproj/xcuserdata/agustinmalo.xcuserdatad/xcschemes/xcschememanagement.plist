@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SSWidget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>SleepSquad.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>C22596501C54203D00ACF39B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C236106E1C540C7A00F2A280</key>
 		<dict>
 			<key>primary</key>
