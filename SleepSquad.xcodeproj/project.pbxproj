@@ -19,7 +19,7 @@
 		C236108A1C540C7B00F2A280 /* SleepSquadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23610891C540C7B00F2A280 /* SleepSquadTests.swift */; };
 		C23610951C540C7B00F2A280 /* SleepSquadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23610941C540C7B00F2A280 /* SleepSquadUITests.swift */; };
 		C2A3363C1C54A9DF00B26CCD /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3363B1C54A9DF00B26CCD /* CircleProgressView.swift */; };
-
+		C2B7E2851C54C9260000B9C6 /* setupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7E2841C54C9260000B9C6 /* setupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +82,7 @@
 		C23610941C540C7B00F2A280 /* SleepSquadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSquadUITests.swift; sourceTree = "<group>"; };
 		C23610961C540C7B00F2A280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2A3363B1C54A9DF00B26CCD /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		C2B7E2841C54C9260000B9C6 /* setupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = setupViewController.swift; path = SleepSquad/setupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +140,7 @@
 		C23610661C540C7A00F2A280 = {
 			isa = PBXGroup;
 			children = (
+				C2B7E2841C54C9260000B9C6 /* setupViewController.swift */,
 				C23610711C540C7B00F2A280 /* SleepSquad */,
 				C23610881C540C7B00F2A280 /* SleepSquadTests */,
 				C23610931C540C7B00F2A280 /* SleepSquadUITests */,
@@ -163,12 +165,10 @@
 			isa = PBXGroup;
 			children = (
 				C2A3363B1C54A9DF00B26CCD /* CircleProgressView.swift */,
-				86916FEA1C5467A10085FAFA /* CircleProgressView.swift */,
 				C22596641C54390200ACF39B /* SleepSquad.entitlements */,
 				C23610721C540C7B00F2A280 /* AppDelegate.swift */,
 				C23610741C540C7B00F2A280 /* FirstViewController.swift */,
 				C23610781C540C7B00F2A280 /* Main.storyboard */,
-				D182D3A91C5431ED0006C17F /* setupViewController.swift */,
 				C236107B1C540C7B00F2A280 /* Assets.xcassets */,
 				C236107D1C540C7B00F2A280 /* LaunchScreen.storyboard */,
 				C23610801C540C7B00F2A280 /* Info.plist */,
@@ -376,12 +376,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D182D3AA1C5431ED0006C17F /* setupViewController.swift in Sources */,
-				D199A7031C54B7FC0089EE74 /* CircleProgressView.swift in Sources */,
+				C2B7E2851C54C9260000B9C6 /* setupViewController.swift in Sources */,
 				C23610731C540C7B00F2A280 /* AppDelegate.swift in Sources */,
 				C23610751C540C7B00F2A280 /* FirstViewController.swift in Sources */,
 				C2A3363C1C54A9DF00B26CCD /* CircleProgressView.swift in Sources */,
-				86916FEB1C5467A10085FAFA /* CircleProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
