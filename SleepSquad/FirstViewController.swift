@@ -195,6 +195,11 @@ class FirstViewController: UIViewController {
         return days[dayInt]
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        updateProgressView()
+    }
 
 
 }

@@ -129,6 +129,18 @@ class setupViewController: UIViewController {
         
         print(dict)
         saveToNSUserDefault()
+        
+        var change = false
+        for index in 0...6 {
+            if (dict[index]!["hours"] == -1){
+                change = true
+                break
+            }
+        }
+        if change == false {
+            doneSetUp.enabled = true;
+        }
+        
 
 }
     
@@ -145,7 +157,7 @@ class setupViewController: UIViewController {
         pickerSubView.hidden = true;
         if (defaults.objectForKey("HasLaunchedOnce") == nil){
             defaults.setBool(true, forKey: "HasLaunchedOnce") //FIRST TIME!
-        
+            doneSetUp.enabled = false
         }
         else{
             let data = defaults.objectForKey("Schedule") as? NSData!
