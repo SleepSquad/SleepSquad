@@ -18,17 +18,20 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
-        let dict = defaults.objectForKey("SavedDict") as? [String: String] ?? [String: String]()
+        let dict = defaults.objectForKey("SavedDict")
         
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([ .Hour, .Minute, .Second], fromDate: date)
         let hour = components.hour
         let minutes = components.minute
+        //let day = dict!["Monday"]
+       // let hours = day["hours"]
+        print("sdfsdf")
+        print(dict!["Monday"])
+        //let hours = 5
         
-        
-        print(dict["Monday"])
-        sleepLeftLabel.text = "If you go to sleep now... You'll only get " + (dict["Monday"])!
+        sleepLeftLabel.text = "If you go to sleep now... You'll only get \(hour) \(minutes)"
     }
     
     override func didReceiveMemoryWarning() {

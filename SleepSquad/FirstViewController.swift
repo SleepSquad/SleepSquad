@@ -14,8 +14,6 @@ class FirstViewController: UIViewController {
     
     var defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.SleepSquad.app")!
     
-//    let dict = ["Monday": (hour: 8, min: 27, ampm: "AM"), "Tuesday": (hour: 8, min: 27, ampm: "AM"), "Wednesday": (hour: 8, min: 27, ampm: "AM"), "Thursday": (hour: 8, min: 27, ampm: "AM"), "Friday": (hour: 8, min: 27, ampm: "AM"), "Saturday": (hour: 8, min: 27, ampm: "AM"), "Sunday": (hour: 8, min: 27, ampm: "AM")]
-    
     let dict =
         ["Monday": ["hours": 7, "minutes": 4, "ampm": "AM"],
         "Tuesday": ["hours": 7, "minutes": 4, "ampm": "AM"],
@@ -36,6 +34,10 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         defaults.setObject(dict, forKey: "SavedDict")
+        
+        let day = defaults.objectForKey("SavedDict")
+        let ampm = day!["Monday"]!!["ampm"] as! String
+        print("\(ampm)")
         
     }
     
