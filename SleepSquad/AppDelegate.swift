@@ -16,6 +16,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        var defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.SleepSquad.app")!
+        print("yuuuuuhoooooooooo")
+        print(defaults.objectForKey("HasLaunchedOnce"))
+        if (defaults.objectForKey("HasLaunchedOnce") == nil){
+            
+            print("yuuuuuhooo")
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("setup") as! UIViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }else{
+            print("yuuuuuhooo2")
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("mainView") as! UIViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
+        
         return true
     }
 

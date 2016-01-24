@@ -24,19 +24,24 @@ class FirstViewController: UIViewController {
     var minutes = -1
     var dayOfWeek = -1 //dayOfWeek is values 0-6.
     
-
-    let dict =
-        [0: ["hours": 1, "minutes": 55], //Sunday
-        1: ["hours": 1, "minutes": 10], //Monday, etc...
-        2: ["hours": 7, "minutes": 04],
-        3: ["hours": 7, "minutes": 04],
-        4: ["hours": 7, "minutes": 04],
-        5: ["hours": 7, "minutes": 04],
-        6: ["hours": 7, "minutes": 04]]
+    var dict = NSDictionary()
+    
+//    var dict =
+//        [0: ["hours": 1, "minutes": 55], //Sunday
+//        1: ["hours": 1, "minutes": 10], //Monday, etc...
+//        2: ["hours": 7, "minutes": 04],
+//        3: ["hours": 7, "minutes": 04],
+//        4: ["hours": 7, "minutes": 04],
+//        5: ["hours": 7, "minutes": 04],
+//        6: ["hours": 7, "minutes": 04]]
     
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        
+        let data = defaults.objectForKey("Schedule") as? NSData!
+        dict = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! NSDictionary
+        
         timePicker.datePickerMode = UIDatePickerMode.Time;
         setTimeUntil();
         self.view.backgroundColor = UIColor(red: 0.153, green: 0.192, blue: 0.247, alpha: 1.0);
@@ -45,7 +50,13 @@ class FirstViewController: UIViewController {
         
         getDateInfo()
         getTimeUntilWakeup()
-        saveToNSUserDefault()
+        //saveToNSUserDefault()
+        print("this is what im talking about")
+        print(dict)
+        let totalMinutesUntilWakeUp = getTimeUntilWakeup()!
+        let hoursUntilWakeUp = (totalMinutesUntilWakeUp/60)
+        let minsUntilWakeUp = totalMinutesUntilWakeUp % 60
+        
         
     }
     
@@ -111,12 +122,15 @@ class FirstViewController: UIViewController {
         return date!
     }
     
-    func getTimeUntilWakeup()->Double? {
+    func getTimeUntilWakeup()->Int? {
         
         //Compare the current time to the wakeup time for today.
-        print("////////////)")
-        print(dict[dayOfWeek]!["hours"]!)
-        var timeString = "" + String(dict[dayOfWeek]!["hours"]!) + ":" + String(dict[dayOfWeek]!["minutes"]!) //Get time into format 06:35
+        
+        let wakeupHour = dict[dayOfWeek]!["hours"] as! Int
+        let wakeupMinutes = dict[dayOfWeek]!["minutes"] as! Int
+        
+        var timeString = "" + String(wakeupHour) + ":" + String(wakeupMinutes) //Get time into format 06:35
+        
         var wakeUpTodayObject = getTimeAs24Hr(timeString) //wakeupDateObject is object storing time to wake up
         
         let currentTimeObject = getTimeAs24Hr("" + String(hour) + ":" + String(minutes))
@@ -137,7 +151,7 @@ class FirstViewController: UIViewController {
             }
             
             //Recalculate the wakeup time so that it is the proper day.
-            timeString = "" + String(dict[wakeUpDay]!["hours"]!) + ":" + String(dict[wakeUpDay]!["minutes"]!) //Get time into format 06:35
+            timeString = "" + String(dict[wakeUpDay]!["hours"] as! Int) + ":" + String(dict[wakeUpDay]!["minutes"] as! Int) //Get time into format 06:35
             wakeUpTodayObject = getTimeAs24Hr(timeString) //wakeupDateObject is object storing time to wake up
             
             //Add 24 hours to wakeup time
@@ -150,9 +164,8 @@ class FirstViewController: UIViewController {
         }
         
         let timeUntilWakeup = floor(Double(wakeUpTodayObject.timeIntervalSinceDate(currentTimeObject))/60) + extra
-        print("sfsdfsf")
-        print(timeUntilWakeup)
-        return timeUntilWakeup //Returns time in minutes, as a double.
+        
+        return Int(timeUntilWakeup) //Returns time in minutes, as a double.
     }
     
     func getDayName(dayInt:Int)->String? {

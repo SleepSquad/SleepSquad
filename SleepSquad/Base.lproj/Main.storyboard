@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c7e-tb-bTx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JtE-g5-4Ww">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -8,10 +8,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--SleepSquad-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="SleepSquad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="9pv-A4-QxB" customClass="FirstViewController" customModule="SleepSquad" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -128,10 +128,18 @@
                                     <!--2016-01-24 00:36:25 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRQ-Jt-HEx">
+                                <rect key="frame" x="554" y="72" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="vy3-Xf-yfB" kind="show" id="3Ux-fe-9uQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nzf-SW-Ac4" firstAttribute="top" secondItem="6T8-Wz-fyL" secondAttribute="bottom" constant="36" id="4IT-YD-DTr"/>
+                            <constraint firstItem="QRQ-Jt-HEx" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" symbolic="YES" id="DfK-rS-CqI"/>
                             <constraint firstItem="Nzf-SW-Ac4" firstAttribute="centerX" secondItem="6T8-Wz-fyL" secondAttribute="centerX" id="Gp0-Ad-uxN"/>
                             <constraint firstItem="PNx-DJ-BRU" firstAttribute="top" secondItem="WBg-US-ogG" secondAttribute="bottom" constant="8" symbolic="YES" id="ITz-6g-Ro5"/>
                             <constraint firstItem="6T8-Wz-fyL" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="50" id="IdK-8n-Hv8"/>
@@ -143,6 +151,7 @@
                             <constraint firstItem="6T8-Wz-fyL" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="fo6-Da-bxQ"/>
                             <constraint firstItem="WBg-US-ogG" firstAttribute="centerX" secondItem="Nzf-SW-Ac4" secondAttribute="centerX" id="lqb-Yp-OL5"/>
                             <constraint firstItem="Xug-Ya-cZE" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="rSL-n4-dj1"/>
+                            <constraint firstAttribute="trailing" secondItem="QRQ-Jt-HEx" secondAttribute="trailing" id="tWt-A4-eAM"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -150,10 +159,10 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="NNQ-hJ-NDA">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="rXw-90-lGi">
+                    <navigationItem key="navigationItem" title="SleepSquad" id="NNQ-hJ-NDA">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="ryg-td-TYk">
                             <connections>
-                                <segue destination="vy3-Xf-yfB" kind="show" id="9Bt-qn-sKS"/>
+                                <segue destination="vy3-Xf-yfB" kind="show" id="lSX-7y-Wgi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -166,12 +175,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="-320"/>
+            <point key="canvasLocation" x="2374" y="-320"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="I9I-rb-qhX">
             <objects>
-                <viewController id="vy3-Xf-yfB" customClass="setupViewController" customModule="SleepSquad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setup" id="vy3-Xf-yfB" customClass="setupViewController" customModule="SleepSquad" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mui-hX-BwN"/>
                         <viewControllerLayoutGuide type="bottom" id="mxf-fv-wQc"/>
@@ -187,7 +196,7 @@
                                     <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="kAK-Zl-0m3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSp-Ad-rfF">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;-- Click to set me!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSp-Ad-rfF">
                                 <rect key="frame" x="169" y="119" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -200,7 +209,7 @@
                                     <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="iMY-BU-rWy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG5-1g-qY9">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;-- Click to set me!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG5-1g-qY9">
                                 <rect key="frame" x="169" y="157" width="160" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="86" id="PpL-K0-Tgv"/>
@@ -266,25 +275,25 @@
                                     <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="6l0-V4-gTr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbn-5p-VKt">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;-- Click to set me!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbn-5p-VKt">
                                 <rect key="frame" x="169" y="227" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lv-nJ-TzV">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;-- Click to set me!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lv-nJ-TzV">
                                 <rect key="frame" x="169" y="260" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP8-gM-Vu5">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;-- Click to set me!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP8-gM-Vu5">
                                 <rect key="frame" x="169" y="289" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAb-kc-jJR">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;-- Click to set me!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAb-kc-jJR">
                                 <rect key="frame" x="169" y="327" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -297,16 +306,24 @@
                                     <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="SRT-Eb-iht"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uv-ka-kfg">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;-- Click to set me!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uv-ka-kfg">
                                 <rect key="frame" x="169" y="189" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-ZX-3P0">
+                                <rect key="frame" x="559" y="570" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="9pv-A4-QxB" kind="show" id="fPy-xh-cUy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4ql-Q8-ESw" firstAttribute="centerX" secondItem="Mj9-Pa-QCl" secondAttribute="centerX" id="2I2-bo-NDc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ecb-ZX-3P0" secondAttribute="trailing" constant="-16" id="3I7-0q-5D1"/>
                             <constraint firstItem="9xV-ZU-FC9" firstAttribute="top" secondItem="Mj9-Pa-QCl" secondAttribute="top" constant="153" id="AZI-Z1-NA8"/>
                             <constraint firstItem="9xV-ZU-FC9" firstAttribute="leading" secondItem="Lt3-zi-8XF" secondAttribute="leading" id="C5X-An-8Hq"/>
                             <constraint firstItem="mxf-fv-wQc" firstAttribute="top" secondItem="dZm-My-l6b" secondAttribute="bottom" constant="20" id="Gu3-Su-59i"/>
@@ -316,12 +333,14 @@
                             <constraint firstItem="9xV-ZU-FC9" firstAttribute="top" secondItem="Lt3-zi-8XF" secondAttribute="bottom" constant="8" symbolic="YES" id="Wpm-u1-FUB"/>
                             <constraint firstItem="nG5-1g-qY9" firstAttribute="leading" secondItem="mSp-Ad-rfF" secondAttribute="leading" id="XAe-oW-c0B"/>
                             <constraint firstItem="9xV-ZU-FC9" firstAttribute="leading" secondItem="Mj9-Pa-QCl" secondAttribute="leadingMargin" id="Xtl-F9-49B"/>
+                            <constraint firstItem="Ecb-ZX-3P0" firstAttribute="bottom" secondItem="mxf-fv-wQc" secondAttribute="top" id="j4t-Wb-jeb"/>
                             <constraint firstItem="nG5-1g-qY9" firstAttribute="trailing" secondItem="mSp-Ad-rfF" secondAttribute="trailing" id="mQm-5e-1Ko"/>
                             <constraint firstItem="nG5-1g-qY9" firstAttribute="top" secondItem="mSp-Ad-rfF" secondAttribute="bottom" constant="17" id="qQp-a2-Wg0"/>
                             <constraint firstItem="dZm-My-l6b" firstAttribute="centerX" secondItem="Mj9-Pa-QCl" secondAttribute="centerX" id="ur2-bo-jFG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doneSetUp" destination="Ecb-ZX-3P0" id="BEz-Sr-xaQ"/>
                         <outlet property="friTime" destination="0lv-nJ-TzV" id="iPE-pR-BOz"/>
                         <outlet property="mondayTime" destination="mSp-Ad-rfF" id="Zyo-IJ-SZA"/>
                         <outlet property="pickerSubView" destination="dZm-My-l6b" id="4TH-s6-ohQ"/>
@@ -335,29 +354,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHc-py-9Tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="-488"/>
+            <point key="canvasLocation" x="3119" y="-320"/>
         </scene>
-        <!--First-->
-        <scene sceneID="FHU-mx-BuW">
+        <!--Navigation Controller-->
+        <scene sceneID="2dR-OF-Pjq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c7e-tb-bTx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JtE-g5-4Ww" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CO0-vt-tDm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LzX-TD-eGx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="7Bh-nn-WQq"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="yt7-9a-wOT"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LM8-cd-fv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQH-B7-9SD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="1562" y="-320"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="first" width="30" height="30"/>
-    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lSX-7y-Wgi"/>
+        <segue reference="fPy-xh-cUy"/>
+    </inferredMetricsTieBreakers>
 </document>

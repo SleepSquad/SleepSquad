@@ -10,6 +10,10 @@ import UIKit
 
 class setupViewController: UIViewController {
     
+    var defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.SleepSquad.app")!
+    
+    @IBOutlet weak var doneSetUp: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var mondayTime: UILabel!
     @IBOutlet weak var tuesdayTime: UILabel!
     @IBOutlet weak var wedsTime: UILabel!
@@ -20,6 +24,14 @@ class setupViewController: UIViewController {
     
     var labelLastClicked : Int = -1
     var element : Int?
+    
+    var dict = [0: ["hours": -1, "minutes": -1], //Sunday
+        1: ["hours": -1, "minutes": -1], //Monday, etc...
+        2: ["hours": -1, "minutes": -1],
+        3: ["hours": -1, "minutes": -1],
+        4: ["hours": -1, "minutes": -1],
+        5: ["hours": -1, "minutes": -1],
+        6: ["hours": -1, "minutes": -1]]
     
     @IBOutlet weak var timePicker: UIDatePicker!
     
@@ -52,7 +64,14 @@ class setupViewController: UIViewController {
         dateFormatter.dateFormat = "hh:mm a"
         timePicker.datePickerMode = UIDatePickerMode.Time
         let formatterTimer = dateFormatter.stringFromDate(timePicker.date)
+        print(timePicker.date)
         
+//        let date = dateFormatter.dateFromString(string1)
+        let calendar = NSCalendar.currentCalendar()
+        let comp = calendar.components([.Hour, .Minute], fromDate: timePicker.date)
+        let hour = comp.hour
+        let minute = comp.minute
+        print("hour \(hour)" + " min \(minute)" )
         let number = true
         
         switch number {
@@ -70,12 +89,6 @@ class setupViewController: UIViewController {
         
         case labelLastClicked == 2 :
             element = 12
-            let tmpButton = self.view.viewWithTag(element!) as? UILabel
-            tmpButton!.text = formatterTimer
-            print("\(formatterTimer)")
-            
-        case labelLastClicked == 7 :
-            element = 17
             let tmpButton = self.view.viewWithTag(element!) as? UILabel
             tmpButton!.text = formatterTimer
             print("\(formatterTimer)")
@@ -98,15 +111,81 @@ class setupViewController: UIViewController {
             tmpButton!.text = formatterTimer
             print("\(formatterTimer)")
             
-        default : break
+        case labelLastClicked == 7 :
+            element = 17
+            let tmpButton = self.view.viewWithTag(element!) as? UILabel
+            tmpButton!.text = formatterTimer
+            print("\(formatterTimer)")
+            labelLastClicked = 3
+            
+        default :
+            break
+            
         }
+        
+            dict[labelLastClicked]!["hours"] = hour
+            dict[labelLastClicked]!["minutes"] = minute
+        
+        
+        print(dict)
+        saveToNSUserDefault()
 
+}
+    
+    func saveToNSUserDefault(){
+        
+        let data = NSKeyedArchiver.archivedDataWithRootObject(dict)
+        defaults.setObject(data, forKey: "Schedule")
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerSubView.hidden = true;
+        if (defaults.objectForKey("HasLaunchedOnce") == nil){
+            defaults.setBool(true, forKey: "HasLaunchedOnce") //FIRST TIME!
+        
+        }
+        else{
+            let data = defaults.objectForKey("Schedule") as? NSData!
+            dict = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! [Int : Dictionary<String, Int>]
+            var str = "";
+            var ampm = ("AM","PM")
+            for element in 10...16 {
+                if element == 13 {
+                    let tmpButton = self.view.viewWithTag(17) as? UILabel
+                    
+                    if dict[3]!["hours"]! > 12 {
+                        
+                        str = "\(dict[3]!["hours"]! - 12):\(dict[3]!["minutes"]!) \(ampm.1)"
+                    }
+                    else{
+                        str = "\(dict[3]!["hours"]!):\(dict[3]!["minutes"]!) \(ampm.0)"
+                    }
+                    tmpButton!.text = str
+                    
+                    
+                }
+                else{
+                   let tmpButton = self.view.viewWithTag(element) as? UILabel
+                    if dict[element - 10]!["hours"]! > 12 {
+                         str = "\(dict[element-10]!["hours"]! - 12):\(dict[element-10]!["minutes"]!) \(ampm.1)"
+                    }
+                    else{
+                         str = "\(dict[element-10]!["hours"]!):\(dict[element-10]!["minutes"]!) \(ampm.0)"
+                    }
+                    tmpButton!.text = str
+                }
+                
+                
+                
+            }
+            
+        }
+
+        defaults.setBool(true, forKey: "HasLaunchedOnce")
+        saveToNSUserDefault()
         
     }
     
