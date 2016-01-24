@@ -57,6 +57,28 @@ class FirstViewController: UIViewController {
         let hoursUntilWakeUp = (totalMinutesUntilWakeUp/60)
         let minsUntilWakeUp = totalMinutesUntilWakeUp % 60
         
+        //run every .5 seconds
+        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "updateProgressView", userInfo: nil, repeats: true)
+        
+        
+    }
+    
+    func updateProgressView() {
+        let formatter = NSNumberFormatter()
+        formatter.minimumIntegerDigits = 2
+        
+        let minutesToWakeup = getTimeUntilWakeup()
+        let hoursToWakeup = Int(minutesToWakeup!/60)
+        let minutesInHour = Int(Int(minutesToWakeup!) - Int(60 * hoursToWakeup))
+        var progress = 1 - minutesToWakeup!/1440
+        
+        if progress > 1 {
+            progress = 1;
+        }
+        
+        self.progressView.progress = Double(progress)
+        self.hoursLabel.text = formatter.stringFromNumber(hoursToWakeup);
+        self.minutesLabel.text = formatter.stringFromNumber(minutesInHour);
         
     }
     
