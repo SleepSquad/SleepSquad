@@ -39,6 +39,8 @@ class setupViewController: UIViewController {
     
     @IBAction func doneWithPicker(sender: AnyObject) {
         if pickerSubView.hidden == false {
+            let tmpButton = self.view.viewWithTag(labelLastClicked) as? UIButton
+            tmpButton?.highlighted = false
             pickerSubView.hidden = true;
         }
         else {
@@ -49,6 +51,8 @@ class setupViewController: UIViewController {
     @IBAction func dateButtonTouch(sender: UIButton) {
         print(sender.tag)
         labelLastClicked = sender.tag
+        let tmpButton = self.view.viewWithTag(labelLastClicked) as? UIButton
+        tmpButton?.highlighted = true
         
         if pickerSubView.hidden == false {
             
@@ -154,6 +158,7 @@ class setupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 0.153, green: 0.192, blue: 0.247, alpha: 1.0);
         pickerSubView.hidden = true;
         if (defaults.objectForKey("HasLaunchedOnce") == nil){
             defaults.setBool(true, forKey: "HasLaunchedOnce") //FIRST TIME!
