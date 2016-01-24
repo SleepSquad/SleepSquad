@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A7797081C5438930072F882 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7797071C5438930072F882 /* CircleProgressView.swift */; };
+		86916FEB1C5467A10085FAFA /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86916FEA1C5467A10085FAFA /* CircleProgressView.swift */; settings = {ASSET_TAGS = (); }; };
+		C22596541C54203D00ACF39B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22596531C54203D00ACF39B /* NotificationCenter.framework */; };
+		C22596571C54203D00ACF39B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22596561C54203D00ACF39B /* TodayViewController.swift */; };
+		C225965A1C54203D00ACF39B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22596581C54203D00ACF39B /* MainInterface.storyboard */; };
+		C225965E1C54203D00ACF39B /* SSWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C22596511C54203D00ACF39B /* SSWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C23610731C540C7B00F2A280 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23610721C540C7B00F2A280 /* AppDelegate.swift */; };
 		C23610751C540C7B00F2A280 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23610741C540C7B00F2A280 /* FirstViewController.swift */; };
 		C236107A1C540C7B00F2A280 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23610781C540C7B00F2A280 /* Main.storyboard */; };
@@ -18,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C225965C1C54203D00ACF39B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C23610671C540C7A00F2A280 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C22596501C54203D00ACF39B;
+			remoteInfo = SSWidget;
+		};
 		C23610861C540C7B00F2A280 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C23610671C540C7A00F2A280 /* Project object */;
@@ -34,8 +45,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C22596621C54203D00ACF39B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C225965E1C54203D00ACF39B /* SSWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0A7797071C5438930072F882 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		86916FEA1C5467A10085FAFA /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleProgressView.swift; path = "../../iOS-CircleProgressView/ProgressView/CircleProgressView.swift"; sourceTree = "<group>"; };
+		C22596511C54203D00ACF39B /* SSWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SSWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C22596531C54203D00ACF39B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C22596561C54203D00ACF39B /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C22596591C54203D00ACF39B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C225965B1C54203D00ACF39B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C22596631C542D9100ACF39B /* SSWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SSWidget.entitlements; sourceTree = "<group>"; };
+		C22596641C54390200ACF39B /* SleepSquad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SleepSquad.entitlements; sourceTree = "<group>"; };
 		C236106F1C540C7B00F2A280 /* SleepSquad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepSquad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23610721C540C7B00F2A280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C23610741C540C7B00F2A280 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +84,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C225964E1C54203D00ACF39B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C22596541C54203D00ACF39B /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C236106C1C540C7A00F2A280 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,12 +116,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C22596521C54203D00ACF39B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C22596531C54203D00ACF39B /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C22596551C54203D00ACF39B /* SSWidget */ = {
+			isa = PBXGroup;
+			children = (
+				C22596631C542D9100ACF39B /* SSWidget.entitlements */,
+				C22596561C54203D00ACF39B /* TodayViewController.swift */,
+				C22596581C54203D00ACF39B /* MainInterface.storyboard */,
+				C225965B1C54203D00ACF39B /* Info.plist */,
+			);
+			path = SSWidget;
+			sourceTree = "<group>";
+		};
 		C23610661C540C7A00F2A280 = {
 			isa = PBXGroup;
 			children = (
 				C23610711C540C7B00F2A280 /* SleepSquad */,
 				C23610881C540C7B00F2A280 /* SleepSquadTests */,
 				C23610931C540C7B00F2A280 /* SleepSquadUITests */,
+				C22596551C54203D00ACF39B /* SSWidget */,
+				C22596521C54203D00ACF39B /* Frameworks */,
 				C23610701C540C7B00F2A280 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +153,7 @@
 				C236106F1C540C7B00F2A280 /* SleepSquad.app */,
 				C23610851C540C7B00F2A280 /* SleepSquadTests.xctest */,
 				C23610901C540C7B00F2A280 /* SleepSquadUITests.xctest */,
+				C22596511C54203D00ACF39B /* SSWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,7 +161,8 @@
 		C23610711C540C7B00F2A280 /* SleepSquad */ = {
 			isa = PBXGroup;
 			children = (
-				0A7797071C5438930072F882 /* CircleProgressView.swift */,
+				86916FEA1C5467A10085FAFA /* CircleProgressView.swift */,
+				C22596641C54390200ACF39B /* SleepSquad.entitlements */,
 				C23610721C540C7B00F2A280 /* AppDelegate.swift */,
 				C23610741C540C7B00F2A280 /* FirstViewController.swift */,
 				C23610781C540C7B00F2A280 /* Main.storyboard */,
@@ -131,6 +194,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C22596501C54203D00ACF39B /* SSWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C22596611C54203D00ACF39B /* Build configuration list for PBXNativeTarget "SSWidget" */;
+			buildPhases = (
+				C225964D1C54203D00ACF39B /* Sources */,
+				C225964E1C54203D00ACF39B /* Frameworks */,
+				C225964F1C54203D00ACF39B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SSWidget;
+			productName = SSWidget;
+			productReference = C22596511C54203D00ACF39B /* SSWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C236106E1C540C7A00F2A280 /* SleepSquad */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C23610991C540C7B00F2A280 /* Build configuration list for PBXNativeTarget "SleepSquad" */;
@@ -138,10 +218,12 @@
 				C236106B1C540C7A00F2A280 /* Sources */,
 				C236106C1C540C7A00F2A280 /* Frameworks */,
 				C236106D1C540C7A00F2A280 /* Resources */,
+				C22596621C54203D00ACF39B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C225965D1C54203D00ACF39B /* PBXTargetDependency */,
 			);
 			name = SleepSquad;
 			productName = SleepSquad;
@@ -194,8 +276,23 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = SleepSquad;
 				TargetAttributes = {
+					C22596501C54203D00ACF39B = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2PL5H752H7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					C236106E1C540C7A00F2A280 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2PL5H752H7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C23610841C540C7B00F2A280 = {
 						CreatedOnToolsVersion = 7.2;
@@ -223,11 +320,20 @@
 				C236106E1C540C7A00F2A280 /* SleepSquad */,
 				C23610841C540C7B00F2A280 /* SleepSquadTests */,
 				C236108F1C540C7B00F2A280 /* SleepSquadUITests */,
+				C22596501C54203D00ACF39B /* SSWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C225964F1C54203D00ACF39B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C225965A1C54203D00ACF39B /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C236106D1C540C7A00F2A280 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,13 +361,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C225964D1C54203D00ACF39B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C22596571C54203D00ACF39B /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C236106B1C540C7A00F2A280 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C23610731C540C7B00F2A280 /* AppDelegate.swift in Sources */,
 				C23610751C540C7B00F2A280 /* FirstViewController.swift in Sources */,
-				0A7797081C5438930072F882 /* CircleProgressView.swift in Sources */,
+				86916FEB1C5467A10085FAFA /* CircleProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +398,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C225965D1C54203D00ACF39B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C22596501C54203D00ACF39B /* SSWidget */;
+			targetProxy = C225965C1C54203D00ACF39B /* PBXContainerItemProxy */;
+		};
 		C23610871C540C7B00F2A280 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C236106E1C540C7A00F2A280 /* SleepSquad */;
@@ -297,6 +416,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C22596581C54203D00ACF39B /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C22596591C54203D00ACF39B /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		C23610781C540C7B00F2A280 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -316,6 +443,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C225965F1C54203D00ACF39B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SSWidget/SSWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SSWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SleepSquad.SleepSquad.SSWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C22596601C54203D00ACF39B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SSWidget/SSWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SSWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SleepSquad.SleepSquad.SSWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		C23610971C540C7B00F2A280 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -401,14 +558,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SleepSquad/SleepSquad.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SleepSquad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SleepSquad.SleepSquad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -416,13 +575,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SleepSquad/SleepSquad.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SleepSquad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SleepSquad.SleepSquad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -477,6 +639,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C22596611C54203D00ACF39B /* Build configuration list for PBXNativeTarget "SSWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C225965F1C54203D00ACF39B /* Debug */,
+				C22596601C54203D00ACF39B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C236106A1C540C7A00F2A280 /* Build configuration list for PBXProject "SleepSquad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

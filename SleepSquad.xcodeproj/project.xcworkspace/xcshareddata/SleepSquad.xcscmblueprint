@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4AF36440B9E7141742EE4701C7CA50BB4AEBED25",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4AF36440B9E7141742EE4701C7CA50BB4AEBED25" : 0,
+    "D592E359647CFA55BA24127435B682530B0363E8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4FB200E5-2FAC-4055-B370-91C1B979527C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4AF36440B9E7141742EE4701C7CA50BB4AEBED25" : "SleepSquad\/",
+    "D592E359647CFA55BA24127435B682530B0363E8" : "iOS-CircleProgressView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SleepSquad",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SleepSquad.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SleepSquad\/SleepSquad.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4AF36440B9E7141742EE4701C7CA50BB4AEBED25"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CardinalNow\/iOS-CircleProgressView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D592E359647CFA55BA24127435B682530B0363E8"
+    }
+  ]
+}
