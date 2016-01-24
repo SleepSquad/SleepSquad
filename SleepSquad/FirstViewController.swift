@@ -70,8 +70,8 @@ class FirstViewController: UIViewController {
         let minutesToWakeup = getTimeUntilWakeup()
         let hoursToWakeup = Int(minutesToWakeup!/60)
         let minutesInHour = Int(Int(minutesToWakeup!) - Int(60 * hoursToWakeup))
-        var progress = 1 - minutesToWakeup!/1440
-        
+        var progress = 1 - Double(minutesToWakeup!)/1440.0
+        print(progress)
         if progress > 1 {
             progress = 1;
         }

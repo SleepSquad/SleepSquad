@@ -157,11 +157,20 @@ class setupViewController: UIViewController {
                     let tmpButton = self.view.viewWithTag(17) as? UILabel
                     
                     if dict[3]!["hours"]! > 12 {
-                        
-                        str = "\(dict[3]!["hours"]! - 12):\(dict[3]!["minutes"]!) \(ampm.1)"
+                        if dict[3]!["minutes"]! < 10 {
+                            str = "\(dict[3]!["hours"]! - 12):0\(dict[3]!["minutes"]!) \(ampm.1)"
+                        }
+                        else {
+                            str = "\(dict[3]!["hours"]! - 12):\(dict[3]!["minutes"]!) \(ampm.1)"
+                        }
                     }
                     else{
-                        str = "\(dict[3]!["hours"]!):\(dict[3]!["minutes"]!) \(ampm.0)"
+                        if dict[3]!["minutes"]! < 10 {
+                            str = "\(dict[3]!["hours"]!):0\(dict[3]!["minutes"]!) \(ampm.0)"
+                        }
+                        else{
+                            str = "\(dict[3]!["hours"]!):\(dict[3]!["minutes"]!) \(ampm.0)"
+                        }
                     }
                     tmpButton!.text = str
                     
@@ -170,10 +179,19 @@ class setupViewController: UIViewController {
                 else{
                    let tmpButton = self.view.viewWithTag(element) as? UILabel
                     if dict[element - 10]!["hours"]! > 12 {
-                         str = "\(dict[element-10]!["hours"]! - 12):\(dict[element-10]!["minutes"]!) \(ampm.1)"
+                        if dict[element - 10]!["minutes"]! < 10{
+                            str = "\(dict[element-10]!["hours"]! - 12):0\(dict[element-10]!["minutes"]!) \(ampm.1)"
+                        }else{
+                            str = "\(dict[element-10]!["hours"]! - 12):\(dict[element-10]!["minutes"]!) \(ampm.1)"
+                        }
                     }
                     else{
-                         str = "\(dict[element-10]!["hours"]!):\(dict[element-10]!["minutes"]!) \(ampm.0)"
+                        if dict[element - 10]!["minutes"]! < 10{
+                            str = "\(dict[element-10]!["hours"]!):0\(dict[element-10]!["minutes"]!) \(ampm.0)"
+                        }
+                        else{
+                            str = "\(dict[element-10]!["hours"]!):\(dict[element-10]!["minutes"]!) \(ampm.0)"
+                        }
                     }
                     tmpButton!.text = str
                 }
