@@ -151,7 +151,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="NNQ-hJ-NDA">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="rXw-90-lGi"/>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="rXw-90-lGi">
+                            <connections>
+                                <segue destination="vy3-Xf-yfB" kind="show" id="9Bt-qn-sKS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="hoursLabel" destination="fDo-BT-TXq" id="GBC-q9-q6D"/>
@@ -163,6 +167,175 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="-320"/>
+        </scene>
+        <!--Setup View Controller-->
+        <scene sceneID="I9I-rb-qhX">
+            <objects>
+                <viewController id="vy3-Xf-yfB" customClass="setupViewController" customModule="SleepSquad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mui-hX-BwN"/>
+                        <viewControllerLayoutGuide type="bottom" id="mxf-fv-wQc"/>
+                    </layoutGuides>
+                    <view key="view" tag="13" contentMode="scaleToFill" id="Mj9-Pa-QCl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lt3-zi-8XF">
+                                <rect key="frame" x="20" y="115" width="55" height="30"/>
+                                <state key="normal" title="Monday"/>
+                                <connections>
+                                    <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="kAK-Zl-0m3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSp-Ad-rfF">
+                                <rect key="frame" x="169" y="119" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xV-ZU-FC9">
+                                <rect key="frame" x="20" y="153" width="58" height="30"/>
+                                <state key="normal" title="Tuesday"/>
+                                <connections>
+                                    <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="iMY-BU-rWy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG5-1g-qY9">
+                                <rect key="frame" x="169" y="157" width="160" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="PpL-K0-Tgv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZm-My-l6b">
+                                <rect key="frame" x="0.0" y="367" width="600" height="213"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4ql-Q8-ESw">
+                                        <rect key="frame" x="140" y="38" width="320" height="167"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="475303678.09498399">
+                                            <!--2016-01-24 04:47:58 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="pickerAction:" destination="vy3-Xf-yfB" eventType="valueChanged" id="HNP-Wi-u6W"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmW-WO-a2m">
+                                        <rect key="frame" x="417" y="0.0" width="41" height="30"/>
+                                        <state key="normal" title="Done!"/>
+                                        <connections>
+                                            <action selector="doneWithPicker:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="dIh-ul-HTU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4ql-Q8-ESw" secondAttribute="bottom" constant="8" id="LqK-Hz-aOr"/>
+                                    <constraint firstItem="4ql-Q8-ESw" firstAttribute="top" secondItem="zmW-WO-a2m" secondAttribute="bottom" constant="8" symbolic="YES" id="SwE-R2-8pl"/>
+                                    <constraint firstItem="zmW-WO-a2m" firstAttribute="top" secondItem="dZm-My-l6b" secondAttribute="top" id="Uwg-Mk-6At"/>
+                                    <constraint firstItem="zmW-WO-a2m" firstAttribute="trailing" secondItem="4ql-Q8-ESw" secondAttribute="trailing" id="gFR-QT-s5e"/>
+                                    <constraint firstAttribute="trailing" secondItem="zmW-WO-a2m" secondAttribute="trailing" constant="140" id="maU-0L-8Xc"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3O-RJ-qWL">
+                                <rect key="frame" x="20" y="223" width="65" height="30"/>
+                                <state key="normal" title="Thursday"/>
+                                <connections>
+                                    <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="mvM-vc-DHD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjm-D3-lWV">
+                                <rect key="frame" x="20" y="285" width="62" height="30"/>
+                                <state key="normal" title="Saturday"/>
+                                <connections>
+                                    <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="DCm-dq-eHd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-zf-yzp">
+                                <rect key="frame" x="20" y="323" width="52" height="30"/>
+                                <state key="normal" title="Sunday"/>
+                                <connections>
+                                    <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="B3m-d9-u7Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K8-TR-d4r">
+                                <rect key="frame" x="20" y="256" width="43" height="30"/>
+                                <state key="normal" title="Friday"/>
+                                <connections>
+                                    <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="6l0-V4-gTr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbn-5p-VKt">
+                                <rect key="frame" x="169" y="227" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lv-nJ-TzV">
+                                <rect key="frame" x="169" y="260" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP8-gM-Vu5">
+                                <rect key="frame" x="169" y="289" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAb-kc-jJR">
+                                <rect key="frame" x="169" y="327" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3E-wH-Kqg">
+                                <rect key="frame" x="20" y="185" width="80" height="30"/>
+                                <state key="normal" title="Wednesday"/>
+                                <connections>
+                                    <action selector="dateButtonTouch:" destination="vy3-Xf-yfB" eventType="touchUpInside" id="SRT-Eb-iht"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uv-ka-kfg">
+                                <rect key="frame" x="169" y="189" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4ql-Q8-ESw" firstAttribute="centerX" secondItem="Mj9-Pa-QCl" secondAttribute="centerX" id="2I2-bo-NDc"/>
+                            <constraint firstItem="9xV-ZU-FC9" firstAttribute="top" secondItem="Mj9-Pa-QCl" secondAttribute="top" constant="153" id="AZI-Z1-NA8"/>
+                            <constraint firstItem="9xV-ZU-FC9" firstAttribute="leading" secondItem="Lt3-zi-8XF" secondAttribute="leading" id="C5X-An-8Hq"/>
+                            <constraint firstItem="mxf-fv-wQc" firstAttribute="top" secondItem="dZm-My-l6b" secondAttribute="bottom" constant="20" id="Gu3-Su-59i"/>
+                            <constraint firstItem="nG5-1g-qY9" firstAttribute="baseline" secondItem="9xV-ZU-FC9" secondAttribute="baseline" id="HXF-Xs-oiX"/>
+                            <constraint firstItem="dZm-My-l6b" firstAttribute="top" secondItem="Mj9-Pa-QCl" secondAttribute="top" constant="367" id="JcN-TA-SPl"/>
+                            <constraint firstItem="nG5-1g-qY9" firstAttribute="leading" secondItem="9xV-ZU-FC9" secondAttribute="trailing" constant="37" id="LWS-r9-QUM"/>
+                            <constraint firstItem="9xV-ZU-FC9" firstAttribute="top" secondItem="Lt3-zi-8XF" secondAttribute="bottom" constant="8" symbolic="YES" id="Wpm-u1-FUB"/>
+                            <constraint firstItem="nG5-1g-qY9" firstAttribute="leading" secondItem="mSp-Ad-rfF" secondAttribute="leading" id="XAe-oW-c0B"/>
+                            <constraint firstItem="9xV-ZU-FC9" firstAttribute="leading" secondItem="Mj9-Pa-QCl" secondAttribute="leadingMargin" id="Xtl-F9-49B"/>
+                            <constraint firstItem="nG5-1g-qY9" firstAttribute="trailing" secondItem="mSp-Ad-rfF" secondAttribute="trailing" id="mQm-5e-1Ko"/>
+                            <constraint firstItem="nG5-1g-qY9" firstAttribute="top" secondItem="mSp-Ad-rfF" secondAttribute="bottom" constant="17" id="qQp-a2-Wg0"/>
+                            <constraint firstItem="dZm-My-l6b" firstAttribute="centerX" secondItem="Mj9-Pa-QCl" secondAttribute="centerX" id="ur2-bo-jFG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="friTime" destination="0lv-nJ-TzV" id="iPE-pR-BOz"/>
+                        <outlet property="mondayTime" destination="mSp-Ad-rfF" id="Zyo-IJ-SZA"/>
+                        <outlet property="pickerSubView" destination="dZm-My-l6b" id="4TH-s6-ohQ"/>
+                        <outlet property="satTime" destination="DP8-gM-Vu5" id="aV4-kz-ft1"/>
+                        <outlet property="sunTime" destination="dAb-kc-jJR" id="ml8-tF-f0p"/>
+                        <outlet property="thursTime" destination="pbn-5p-VKt" id="fH0-Eg-2Qv"/>
+                        <outlet property="timePicker" destination="4ql-Q8-ESw" id="r76-22-PG3"/>
+                        <outlet property="tuesdayTime" destination="nG5-1g-qY9" id="pvn-l6-TbS"/>
+                        <outlet property="wedsTime" destination="5uv-ka-kfg" id="Xdi-Va-pfb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHc-py-9Tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2254" y="-488"/>
         </scene>
         <!--First-->
         <scene sceneID="FHU-mx-BuW">
