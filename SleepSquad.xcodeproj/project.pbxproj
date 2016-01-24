@@ -20,6 +20,8 @@
 		C23610951C540C7B00F2A280 /* SleepSquadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23610941C540C7B00F2A280 /* SleepSquadUITests.swift */; };
 		D182D3AA1C5431ED0006C17F /* setupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D3A91C5431ED0006C17F /* setupViewController.swift */; };
 		D199A7031C54B7FC0089EE74 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199A7021C54B7FC0089EE74 /* CircleProgressView.swift */; };
+		D199A70A1C54CA9E0089EE74 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D199A7081C54CA9E0089EE74 /* Icon-60@2x.png */; };
+		D199A70B1C54CA9E0089EE74 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D199A7091C54CA9E0089EE74 /* Icon-60@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		C23610961C540C7B00F2A280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D182D3A91C5431ED0006C17F /* setupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setupViewController.swift; sourceTree = "<group>"; };
 		D199A7021C54B7FC0089EE74 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		D199A7081C54CA9E0089EE74 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		D199A7091C54CA9E0089EE74 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,8 @@
 				C236107B1C540C7B00F2A280 /* Assets.xcassets */,
 				C236107D1C540C7B00F2A280 /* LaunchScreen.storyboard */,
 				C23610801C540C7B00F2A280 /* Info.plist */,
+				D199A7081C54CA9E0089EE74 /* Icon-60@2x.png */,
+				D199A7091C54CA9E0089EE74 /* Icon-60@3x.png */,
 			);
 			path = SleepSquad;
 			sourceTree = "<group>";
@@ -342,8 +348,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C236107F1C540C7B00F2A280 /* LaunchScreen.storyboard in Resources */,
+				D199A70B1C54CA9E0089EE74 /* Icon-60@3x.png in Resources */,
 				C236107C1C540C7B00F2A280 /* Assets.xcassets in Resources */,
 				C236107A1C540C7B00F2A280 /* Main.storyboard in Resources */,
+				D199A70A1C54CA9E0089EE74 /* Icon-60@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
