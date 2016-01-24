@@ -26,13 +26,13 @@ class FirstViewController: UIViewController {
     
 
     let dict =
-        [0: ["hours": 01, "minutes": 08], //Sunday
-        1: ["hours": 01, "minutes": 10], //Monday, etc...
-        2: ["hours": 07, "minutes": 04],
-        3: ["hours": 07, "minutes": 04],
-        4: ["hours": 07, "minutes": 04],
-        5: ["hours": 07, "minutes": 04],
-        6: ["hours": 07, "minutes": 04]]
+        [0: ["hours": 1, "minutes": 55], //Sunday
+        1: ["hours": 1, "minutes": 10], //Monday, etc...
+        2: ["hours": 7, "minutes": 04],
+        3: ["hours": 7, "minutes": 04],
+        4: ["hours": 7, "minutes": 04],
+        5: ["hours": 7, "minutes": 04],
+        6: ["hours": 7, "minutes": 04]]
     
     
     override func viewDidLoad() {
@@ -42,14 +42,21 @@ class FirstViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: 0.153, green: 0.192, blue: 0.247, alpha: 1.0);
         
         // Do any additional setup after loading the view, typically from a nib.
-        //defaults.setObject(dict, forKey: "SavedDict")
+        
         getDateInfo()
         getTimeUntilWakeup()
-        
+        saveToNSUserDefault()
         
     }
     
+    func saveToNSUserDefault(){
+        
+        let data = NSKeyedArchiver.archivedDataWithRootObject(dict)
+        defaults.setObject(data, forKey: "Schedule")
+        
 
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -107,6 +114,8 @@ class FirstViewController: UIViewController {
     func getTimeUntilWakeup()->Double? {
         
         //Compare the current time to the wakeup time for today.
+        print("////////////)")
+        print(dict[dayOfWeek]!["hours"]!)
         var timeString = "" + String(dict[dayOfWeek]!["hours"]!) + ":" + String(dict[dayOfWeek]!["minutes"]!) //Get time into format 06:35
         var wakeUpTodayObject = getTimeAs24Hr(timeString) //wakeupDateObject is object storing time to wake up
         
@@ -141,6 +150,8 @@ class FirstViewController: UIViewController {
         }
         
         let timeUntilWakeup = floor(Double(wakeUpTodayObject.timeIntervalSinceDate(currentTimeObject))/60) + extra
+        print("sfsdfsf")
+        print(timeUntilWakeup)
         return timeUntilWakeup //Returns time in minutes, as a double.
     }
     

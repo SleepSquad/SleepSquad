@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86916FEB1C5467A10085FAFA /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86916FEA1C5467A10085FAFA /* CircleProgressView.swift */; settings = {ASSET_TAGS = (); }; };
 		C22596541C54203D00ACF39B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22596531C54203D00ACF39B /* NotificationCenter.framework */; };
 		C22596571C54203D00ACF39B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22596561C54203D00ACF39B /* TodayViewController.swift */; };
 		C225965A1C54203D00ACF39B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22596581C54203D00ACF39B /* MainInterface.storyboard */; };
@@ -19,6 +18,7 @@
 		C236107F1C540C7B00F2A280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C236107D1C540C7B00F2A280 /* LaunchScreen.storyboard */; };
 		C236108A1C540C7B00F2A280 /* SleepSquadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23610891C540C7B00F2A280 /* SleepSquadTests.swift */; };
 		C23610951C540C7B00F2A280 /* SleepSquadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23610941C540C7B00F2A280 /* SleepSquadUITests.swift */; };
+		C2A3363C1C54A9DF00B26CCD /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3363B1C54A9DF00B26CCD /* CircleProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		86916FEA1C5467A10085FAFA /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleProgressView.swift; path = "../../iOS-CircleProgressView/ProgressView/CircleProgressView.swift"; sourceTree = "<group>"; };
 		C22596511C54203D00ACF39B /* SSWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SSWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22596531C54203D00ACF39B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		C22596561C54203D00ACF39B /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		C23610901C540C7B00F2A280 /* SleepSquadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepSquadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23610941C540C7B00F2A280 /* SleepSquadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSquadUITests.swift; sourceTree = "<group>"; };
 		C23610961C540C7B00F2A280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2A3363B1C54A9DF00B26CCD /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +161,7 @@
 		C23610711C540C7B00F2A280 /* SleepSquad */ = {
 			isa = PBXGroup;
 			children = (
-				86916FEA1C5467A10085FAFA /* CircleProgressView.swift */,
+				C2A3363B1C54A9DF00B26CCD /* CircleProgressView.swift */,
 				C22596641C54390200ACF39B /* SleepSquad.entitlements */,
 				C23610721C540C7B00F2A280 /* AppDelegate.swift */,
 				C23610741C540C7B00F2A280 /* FirstViewController.swift */,
@@ -375,7 +375,7 @@
 			files = (
 				C23610731C540C7B00F2A280 /* AppDelegate.swift in Sources */,
 				C23610751C540C7B00F2A280 /* FirstViewController.swift in Sources */,
-				86916FEB1C5467A10085FAFA /* CircleProgressView.swift in Sources */,
+				C2A3363C1C54A9DF00B26CCD /* CircleProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
