@@ -50,9 +50,14 @@ class setupViewController: UIViewController {
     
     @IBAction func dateButtonTouch(sender: UIButton) {
         print(sender.tag)
+        for index in 0...7 {
+            let tmpButton1 = self.view.viewWithTag(index) as? UIButton
+            tmpButton1?.setTitleColor(UIColor.orangeColor(), forState: .Normal)
+
+        }
         labelLastClicked = sender.tag
         let tmpButton = self.view.viewWithTag(labelLastClicked) as? UIButton
-        tmpButton?.highlighted = true
+        tmpButton?.setTitleColor(UIColor.yellowColor(), forState: .Normal)
         
         if pickerSubView.hidden == false {
             
@@ -160,6 +165,7 @@ class setupViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 0.153, green: 0.192, blue: 0.247, alpha: 1.0);
         pickerSubView.hidden = true;
+        timePicker.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
         if (defaults.objectForKey("HasLaunchedOnce") == nil){
             defaults.setBool(true, forKey: "HasLaunchedOnce") //FIRST TIME!
             doneSetUp.enabled = false
