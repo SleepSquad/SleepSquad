@@ -36,6 +36,8 @@ class FirstViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         defaults.setObject(dict, forKey: "SavedDict")
+        getDateInfo()
+        
         
     }
     
@@ -50,6 +52,42 @@ class FirstViewController: UIViewController {
         self.minutesLabel.text = String(31);
         self.progressView.progress = 0.32
 
+    }
+
+    func getDayOfWeek(today:String)->Int? {
+        
+        let formatter  = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        if let todayDate = formatter.dateFromString(today) {
+            let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+            let myComponents = myCalendar.components(.Weekday, fromDate: todayDate)
+            let weekDay = myComponents.weekday
+            return weekDay
+        } else {
+            return nil
+        }
+    }
+    
+    func getDateInfo() {
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year, .Hour, .Minute], fromDate: date)
+    
+        let year =  components.year
+        let month = components.month
+        let day = components.day
+        let hour = components.hour;
+        let minutes = components.minute;
+        
+        let dayOfWeek = String(getDayOfWeek(String(year) + "-" + String(month) + "-" + String(day))!)
+    
+        print(year)
+        print(month)
+        print(day)
+        print(hour)
+        print(minutes)
+        print(dayOfWeek)
+        
     }
 
 
